@@ -17,10 +17,9 @@ const SelectedSlot = ({ slot }: timeSlotProps): ReactElement => {
   const styles = useStyles();
   return (
     <div className={styles.root}>
-      <div>{slot.day}</div>
-      <div>
-        {slot.start} / {slot.end}
-      </div>
+      {slot.day}
+      <br />
+      {slot.start} / {slot.end}
     </div>
   );
 };

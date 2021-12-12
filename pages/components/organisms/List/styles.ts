@@ -25,6 +25,9 @@ export default makeStyles(
           width: "100%",
         },
       },
+      slot: {
+        marginBottom: 5,
+      },
       header: {
         height: 90,
       },

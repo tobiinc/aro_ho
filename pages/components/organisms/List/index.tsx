@@ -70,7 +70,6 @@ const List = (): ReactElement => {
   const [finalData, setfinalData] = useState<viewDataProps[]>([]);
   useEffect(() => {
     const url = "http://127.0.0.1:3000/companys";
-
     const fetchData = async () => {
       try {
         const response = await fetch(url);
@@ -110,37 +109,36 @@ const List = (): ReactElement => {
 
           return (
             <div key={item.id} className={styles.company}>
-              <div className={styles.header}>
+              <header className={styles.header}>
                 <h2>{item.name}</h2>
                 {item.time_slots.map((slot: timeSlotProps, i) => {
                   return (
                     slot.isSelected && <SelectedSlot key={i} slot={slot} />
                   );
                 })}
-              </div>
+              </header>
               {item.time_slots.map((slot: timeSlotProps, i: number) => {
                 const prev = i === 0 ? i : i - 1;
                 return (
-                  <>
-                    <div
-                      key={`${item.id}-${slot.unixTimeStamp}`}
-                      onClick={() =>
-                        handleChange(
-                          slot,
-                          item.id,
-                          finalData,
-                          slot.isSelected,
-                          slot.isBlocked,
-                          hasSelection
-                        )
-                      }
-                    >
-                      {(slot.day !== item.time_slots[prev].day || i === 0) && (
-                        <h3>{slot.day}</h3>
-                      )}
-                      <TimeSlot timeSlot={slot} />
-                    </div>
-                  </>
+                  <article
+                    key={`${item.id}-${slot.unixTimeStamp}`}
+                    className={styles.slot}
+                    onClick={() =>
+                      handleChange(
+                        slot,
+                        item.id,
+                        finalData,
+                        slot.isSelected,
+                        slot.isBlocked,
+                        hasSelection
+                      )
+                    }
+                  >
+                    {(slot.day !== item.time_slots[prev].day || i === 0) && (
+                      <h3>{slot.day}</h3>
+                    )}
+                    <TimeSlot timeSlot={slot} />
+                  </article>
                 );
               })}
             </div>

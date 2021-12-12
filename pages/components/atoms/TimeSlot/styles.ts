@@ -10,7 +10,8 @@ export default makeStyles(
         let styles = {};
         if (isSelected) {
           styles = {
-            background: "#CCC",
+            background: "#282828",
+            color: "#FAFAFA",
           };
         }
         if (isBlocked) {
@@ -23,7 +24,6 @@ export default makeStyles(
           background: "#FAFAFA",
           cursor: "pointer",
           padding: 10,
-          marginBottom: 5,
           textAlign: "center",
           ...styles,
         };
