@@ -2,21 +2,27 @@
   "name": "aro_ho",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3333",
+    "api": "json-server db.json",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
+    "@material-ui/styles": "^4.11.4",
+    "axios": "^0.24.0",
+    "json-server": "^0.17.0",
+    "moment": "^2.29.1",
     "next": "12.0.7",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "react-fetch-hook": "^1.8.5"
   },
   "devDependencies": {
     "@types/node": "16.11.12",
     "@types/react": "17.0.37",
     "eslint": "8.4.1",
     "eslint-config-next": "12.0.7",
-    "typescript": "4.5.3"
+    "typescript": "4.5.2"
   }
 }
