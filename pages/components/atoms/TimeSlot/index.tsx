@@ -3,12 +3,8 @@ import useStyles from "./styles";
 
 export interface timeSlotProps {
   timeSlot: {
-    start_time: string;
-    end_time: string;
-    day: string;
     start: string;
     end: string;
-    unixTimeStamp: number;
     isSelected: boolean;
     isBlocked: boolean;
   };

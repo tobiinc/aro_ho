@@ -1,7 +1,6 @@
 import { ReactElement, useEffect, useState } from "react";
+import { TimeSlot, SelectedSlot } from "../../atoms/";
 import moment from "moment";
-import TimeSlot from "../../atoms/TimeSlot";
-import SelectedSlot from "../../atoms/SelectedSlot";
 import useStyles from "./styles";
 
 export interface timeSlotProps {
@@ -52,10 +51,7 @@ const List = (): ReactElement => {
             return {
               ...slot,
               isSelected: isCompany && slot.isSelected,
-              isBlocked:
-                slot.unixTimeStamp === selectedItem.unixTimeStamp
-                  ? false
-                  : slot.isBlocked,
+              isBlocked: isTimeStamp ? false : slot.isBlocked,
             };
           } else {
             return {

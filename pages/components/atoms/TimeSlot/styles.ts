@@ -30,5 +30,5 @@ export default makeStyles(
       },
     };
   },
-  { name: "Slot" }
+  { name: "TimeSlot" }
 );
