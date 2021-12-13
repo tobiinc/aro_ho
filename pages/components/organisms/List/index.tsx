@@ -21,6 +21,8 @@ export interface viewDataProps {
   hasSelection: boolean;
 }
 const List = (): ReactElement => {
+  const styles = useStyles();
+  const [finalData, setfinalData] = useState<viewDataProps[]>([]);
   const handleChange = (
     selectedItem: timeSlotProps,
     companyId: number,
@@ -66,8 +68,6 @@ const List = (): ReactElement => {
     return setfinalData(renderData);
   };
 
-  const styles = useStyles();
-  const [finalData, setfinalData] = useState<viewDataProps[]>([]);
   useEffect(() => {
     const url = "http://127.0.0.1:3000/companys";
     const fetchData = async () => {

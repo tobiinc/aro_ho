@@ -1,7 +1,8 @@
-import { ReactElement, useEffect, useState } from "react";
-import moment from "moment";
-import List from "./components/organisms/List";
-
+import { ReactElement } from "react";
+import dynamic from "next/dynamic";
+const List = dynamic(() => import("./components/organisms/List"), {
+  ssr: false,
+});
 const Home = (): ReactElement => {
   return <List />;
 };
